@@ -19,21 +19,21 @@ public:
 //         better than recursive
         
         vector<vector<int>>dp(m,vector<int>(n,-1));
-        int total=findTotalPaths(0,0,m,n,dp);
-        return total;
+        int total1=findTotalPaths(0,0,m,n,dp);
         
-//         using combinatorics
-//             most optimal
-//         int N=(m+n-2);
-//         int rows=(m-1);
         
-//         double total=1;
+        // using combinatorics
+        //     most optimal
+        int N=(m+n-2);
+        int rows=(m-1);
         
-//         for(int i=1;i<=rows;i++){
-//             total=total*(N-rows+i)/i;
-//         }
+        double total=1;
         
-//         return (int)total;
+        for(int i=1;i<=rows;i++){
+            total=total*(N-rows+i)/i;
+        }
+        
+        return (int)total;
         
     }
 };
