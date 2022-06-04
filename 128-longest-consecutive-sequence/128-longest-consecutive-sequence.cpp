@@ -3,22 +3,22 @@ public:
     int longestConsecutive(vector<int>& nums) {
         
         int n=nums.size();
-        unordered_set<int>s;
+        set<int>hashSet;
         
        
         for(int i=0;i<n;i++)
-            s.insert(nums[i]);
+            hashSet.insert(nums[i]);
         
          int max_length=0;
         
-           for(auto element:s){
+           for(auto element:hashSet){
                int prev_element=element-1;
-               if(s.find(prev_element)!=s.end())
+               if(hashSet.find(prev_element)!=hashSet.end())
                    continue;
                int length=1;
                int next_element=element+1;
                
-               while(s.find(next_element)!=s.end()){
+               while(hashSet.find(next_element)!=hashSet.end()){
                    length++;
                    next_element++;
                }
