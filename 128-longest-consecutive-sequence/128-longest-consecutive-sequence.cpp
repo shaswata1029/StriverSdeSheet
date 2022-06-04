@@ -13,8 +13,12 @@ public:
         
            for(auto element:hashSet){
                int prev_element=element-1;
+               
+               
                if(hashSet.find(prev_element)!=hashSet.end())
                    continue;
+//                Checking if the previous existes or not because we are only interested in starting from the minimal element of a streak
+               
                int length=1;
                int next_element=element+1;
                
