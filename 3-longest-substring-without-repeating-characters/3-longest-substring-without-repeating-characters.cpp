@@ -9,7 +9,7 @@ public:
         
         int max_len=0;
         
-        map<char,int>lastSeen;
+        unordered_map<char,int>lastSeen;
         
         while(end<n){
             char ch=s[end];
