@@ -9,16 +9,16 @@ public:
         
         int max_len=0;
         
-        map<char,int>hashMap;
+        map<char,int>lastSeen;
         
         while(end<n){
             char ch=s[end];
             
-            if(hashMap.find(ch)!=hashMap.end())
-                start=max(start,hashMap[ch]+1);
+            if(lastSeen.find(ch)!=lastSeen.end())
+                start=max(start,lastSeen[ch]+1);
             
             max_len=max(max_len,end-start+1);
-            hashMap[ch]=end;
+            lastSeen[ch]=end;
                 
             end++;
         }
