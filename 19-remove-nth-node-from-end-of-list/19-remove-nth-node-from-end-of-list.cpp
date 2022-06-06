@@ -15,6 +15,12 @@ public:
         ListNode* prevNode=NULL;
         ListNode *fast=head,*slow=head;
         
+        
+        // Initially move the fast pointer by n steps so that the difference between slow            and fast pointers is n.
+        // Then we move both slow and fast pointers by 1 step until fast reaches NULL.
+        // The node which slow points at that moment is the required node to be deleted,so           we also keep a previous pointer to slow node to perform the delete operation.
+        
+        
         while(n>0){
            fast=fast->next;
            n--;
