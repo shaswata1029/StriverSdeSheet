@@ -28,11 +28,12 @@ public:
         if(k==0)
             return head;    
         
+//         Making the last node pointing to the head node
         curNode->next=head;
+//         Doing this so we know the node which will point to NULL and its next node will be the new head.
         k=len-k;
         
-        curNode=head;
-        while(k>1){
+        while(k>0){
             curNode=curNode->next;
             k--;
         }
