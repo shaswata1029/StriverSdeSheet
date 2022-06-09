@@ -116,12 +116,10 @@ Node* merge(Node * head1,Node* head2){
     return NULL;
     
     if(head1==NULL){
-        head2->bottom=merge(head1,head2->bottom);
         return head2;
     }
     
     if(head2==NULL){
-        head1->bottom=merge(head1->bottom,head2);
         return head1;
     }
     
