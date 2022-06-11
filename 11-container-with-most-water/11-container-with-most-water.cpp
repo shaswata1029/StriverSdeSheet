@@ -6,29 +6,19 @@ public:
         int left=0;
         int right=n-1;
         
-        int leftMax=INT_MIN,rightMax=INT_MIN;
-        int leftIdx=-1,rightIdx=n;
+      
         
         int maxAns=0;
         while(left<right){
-            if(height[left]>leftMax){
-                leftMax=height[left];
-                leftIdx=left;
-            }
+            maxAns=max(maxAns,min(height[left],height[right])*(right-left));
             
-            if(height[right]>rightMax){
-                rightMax=height[right];
-                rightIdx=right;
-            }
-            
-            if(rightMax>=leftMax){
-                maxAns=max(maxAns,leftMax*(rightIdx-leftIdx));
+//             Since left height will always be the minimum how much the right height increase we cant find a better answer with this left pointer.
+//             So we increase the left pointer
+//             Same is the case for right pointer 
+            if(height[right]>=height[left])
                 left++;
-            }
-            else{
-                maxAns=max(maxAns,rightMax*(rightIdx-leftIdx));
+            else
                 right--;
-            }
             
         }
         
