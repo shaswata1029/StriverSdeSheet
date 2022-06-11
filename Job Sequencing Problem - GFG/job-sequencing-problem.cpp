@@ -37,22 +37,34 @@ class Solution
         
         
         sort(jobs,jobs+n,compare);
-        int curIndex=n-1;
+       
         int maximumProfit=0;
-        priority_queue<int>pq;
         int count=0;
         
-        for(int i=100;i>=1;i--){
-            while(curIndex>=0 and jobs[curIndex].dead==i){
-            pq.push(jobs[curIndex].profit);
-            curIndex--;
-            }
-            if(!pq.empty()){
+        priority_queue<int>pq;
+        pq.push(jobs[n-1].profit);
+        
+        for(int i=n-2;i>=0;i--){
+            int timeDiff=jobs[i+1].dead-jobs[i].dead;
+            
+            while(timeDiff>0 and !pq.empty()){
                 count++;
                 maximumProfit+=pq.top();
                 pq.pop();
+                timeDiff--;
             }
+            
+            pq.push(jobs[i].profit);
         }
+        
+        int timeDiff=jobs[0].dead;
+        while(timeDiff>0 and !pq.empty()){
+            count++;
+            maximumProfit+=pq.top();
+            pq.pop();
+            timeDiff--;
+        }
+        
         
         
         return {count,maximumProfit};
