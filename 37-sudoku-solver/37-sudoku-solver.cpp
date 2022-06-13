@@ -25,8 +25,6 @@ public:
         if(isSolved)
             return;
         
-        // if(row==8)
-        // cout<<row<<" "<<col<<"\n";
         int grid=3*(row/3)+col/3;
         
         
