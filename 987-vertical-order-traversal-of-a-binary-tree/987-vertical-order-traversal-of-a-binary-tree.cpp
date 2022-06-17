@@ -12,13 +12,6 @@
 class Solution {
 public:
     
-//     static bool compare(const pair<int,int>&p1,const pair<int,int>&p2){
-//         if(p1.first!=p2.first)
-//             return p1.first<p2.first;
-        
-//         return p1.second<p2.second
-//     }
-    
     void verticalTraversal(TreeNode* root,int level,int column,map<int,vector<pair<int,int>>>&hashMap){
         if(root==NULL)
             return;
