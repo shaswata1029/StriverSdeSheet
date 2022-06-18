@@ -14,14 +14,39 @@ public:
     
     TreeNode* invertTree(TreeNode* root) {
         
+//         Recursive Method
+//         if(root==NULL)
+//             return NULL;
+        
+//         TreeNode * newRight=invertTree(root->left);
+//         TreeNode* newLeft=invertTree(root->right);
+        
+//         root->left=newLeft;
+//         root->right=newRight;
+        
+//         Iterative method;
+        
         if(root==NULL)
-            return NULL;
+            return root;
         
-        TreeNode * newRight=invertTree(root->left);
-        TreeNode* newLeft=invertTree(root->right);
+        queue<TreeNode*>q;
+        q.push(root);
         
-        root->left=newLeft;
-        root->right=newRight;
+        while(!q.empty()){
+            TreeNode* node=q.front();
+            q.pop();
+            
+          
+            if(node->left)
+                q.push(node->left);
+            
+            if(node->right)
+                q.push(node->right);
+            
+            TreeNode *temp=node->left;
+            node->left=node->right;
+            node->right=temp;
+        }
         
         return root;
         
