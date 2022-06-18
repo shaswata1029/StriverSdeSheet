@@ -36,6 +36,10 @@ public:
             TreeNode* node=q.front();
             q.pop();
             
+            TreeNode *temp=node->left;
+            node->left=node->right;
+            node->right=temp;
+            
           
             if(node->left)
                 q.push(node->left);
@@ -43,9 +47,7 @@ public:
             if(node->right)
                 q.push(node->right);
             
-            TreeNode *temp=node->left;
-            node->left=node->right;
-            node->right=temp;
+           
         }
         
         return root;
