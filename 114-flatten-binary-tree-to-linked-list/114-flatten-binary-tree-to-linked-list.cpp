@@ -26,6 +26,8 @@ public:
     }
     
     void flatten(TreeNode* root) {
+        
+//         Using Recursion
         TreeNode *prevNode=NULL;
         flattenTree(root,prevNode);
         
