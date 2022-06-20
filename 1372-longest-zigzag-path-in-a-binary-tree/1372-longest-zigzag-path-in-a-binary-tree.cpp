@@ -28,7 +28,7 @@ public:
         int leftPath=1+leftAns.right;
         int rightPath=1+rightAns.left;
         
-        maxPath=max(maxPath,max(leftPath,rightPath));
+        maxPath=max({maxPath,leftPath,rightPath});
         
         return {leftPath,rightPath};
     }
