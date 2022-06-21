@@ -33,6 +33,10 @@ public:
     
     int minCameraCover(TreeNode* root) {
         
+//         -1 represents that its child need a camera for it to cover so it will have to install a camera on that node
+//         0 represents that that its child itself has a camera so it will cover the node
+//         1 represensts that its child is covered by some other node so the node will need a camera
+        
         int totalCameras=0;
         
         int rootAns=minCameras(root,totalCameras);
