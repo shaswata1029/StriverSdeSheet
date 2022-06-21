@@ -18,9 +18,10 @@ public:
         if(root==p || root==q)
             return root;
         
-        if(root->val> p->val && root->val> q->val)
+        int curVal=root->val;
+        if(curVal> p->val && curVal> q->val)
             return lowestCommonAncestor(root->left,p,q);
-        else if(root->val< p->val && root->val< q->val)
+        else if(curVal< p->val && curVal< q->val)
             return lowestCommonAncestor(root->right,p,q);
         
         return root;
