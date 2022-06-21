@@ -36,6 +36,9 @@ public:
  
     int countNodes(TreeNode* root) {
         
+//         Time Complexity-- O(log(n)*log(n))
+        
+        
         if(root==NULL)
             return 0;
         
