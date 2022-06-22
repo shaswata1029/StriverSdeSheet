@@ -11,11 +11,7 @@ public:
         }
         
         sort(range.begin(),range.end());
-        
-        for(int i=0;i<=n;i++){
-            cout<<range[i].first<<" "<<range[i].second<<"\n";
-        }
-        
+      
         int count=0;
         int startPoint=0;
         int curIndex=0;
@@ -26,9 +22,7 @@ public:
                 endPoint=max(endPoint,range[curIndex].second);
                 curIndex++;
             }
-            
-            // cout<<endPoint<<"\n";
-
+        
             if(endPoint<=startPoint)
                 return -1;
             count++;
