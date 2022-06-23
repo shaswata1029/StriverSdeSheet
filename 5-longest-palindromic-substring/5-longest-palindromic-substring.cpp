@@ -15,13 +15,13 @@ public:
         int n=s.size();
         int start=0,maxLen=1;
         
-        for(int k=0;k<n;k++){
-            int len=findLongestSubstring(s,n,k,k);
-            len=max(len,findLongestSubstring(s,n,k,k+1));
+        for(int index=0;index<n;index++){
+            int len=findLongestSubstring(s,n,index,index);
+            len=max(len,findLongestSubstring(s,n,index,index+1));
             
             if(len>maxLen){
                 maxLen=len;
-                start=k-(len-1)/2;
+                start=index-(len-1)/2;
             }
         }
         
