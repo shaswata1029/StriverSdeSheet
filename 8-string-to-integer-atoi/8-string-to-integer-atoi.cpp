@@ -1,10 +1,12 @@
 typedef long long ll;
 class Solution {
 public:
-      ll POS_MAX=INT_MAX;
-      ll NEG_MIN=INT_MIN;
+     
     
     int myAtoi(string str) {
+        
+      ll POS_MAX=INT_MAX;
+      ll NEG_MIN=INT_MIN;
         
         int n=str.size();
         ll number=0;
@@ -34,7 +36,7 @@ public:
             int digit=str[curIndex]-'0';
             number=number*10+digit;
             
-            cout<<number<<" ";
+          
             if(positive and number>=POS_MAX)
             {
                 number=POS_MAX;
