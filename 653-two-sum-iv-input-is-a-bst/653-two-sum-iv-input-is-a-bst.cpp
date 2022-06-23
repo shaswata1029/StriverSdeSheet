@@ -70,6 +70,9 @@ class Solution {
 public:
     bool findTarget(TreeNode* root, int target) {
         
+        if(root==NULL)
+            return false;
+        
         BSTIterator it(root);
         
         int left=it.next();
