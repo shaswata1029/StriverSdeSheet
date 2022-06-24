@@ -4,7 +4,7 @@ public:
         if(k==0)
             return 0;
         
-        map<int,int>m;
+        unordered_map<int,int>m;
         
         int index1=0,index2=0;
         int count=0;
