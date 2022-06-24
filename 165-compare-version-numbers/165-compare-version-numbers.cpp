@@ -1,7 +1,7 @@
 class Solution {
 public:
     
-    vector<int> convertToInt(string &version){
+    vector<int> split(string &version,char ch){
         
         int n=version.size();
         vector<int>res;
@@ -11,7 +11,7 @@ public:
         
         while(curIndex<n){
             
-            if(version[curIndex]=='.'){
+            if(version[curIndex]==ch){
                 res.push_back(number);
                 number=0;
             }else{
@@ -31,8 +31,8 @@ public:
     
     int compareVersion(string version1, string version2) {
         
-        vector<int> nums1=convertToInt(version1);
-        vector<int> nums2=convertToInt(version2);
+        vector<int> nums1=split(version1,'.');
+        vector<int> nums2=split(version2,'.');
         
         int n=nums1.size();
         int m=nums2.size();
