@@ -18,10 +18,9 @@ public:
             
             if(!st.empty() && st.top()>0 && st.top()==abs(curSize))
                 st.pop();
-            else if(!st.empty() && st.top()<0)
+            else if(st.empty() || st.top()<0)
                 st.push(curSize);
-            else if(st.empty())
-                st.push(curSize);
+
         }
         
         vector<int>res;
