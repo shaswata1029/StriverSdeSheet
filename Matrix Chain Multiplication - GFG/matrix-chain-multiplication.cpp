@@ -10,7 +10,7 @@ using namespace std;
 class Solution{
 public:
     
-    int findMinimumCost(int nums[],int n,int left,int right,vector<vector<int>>&dp){
+    int findMinimumCost(int nums[],int left,int right,vector<vector<int>>&dp){
         if(right-left+1<=2)
         return 0;
         
@@ -20,8 +20,8 @@ public:
         int minCost=INT_MAX;
         
         for(int index=left+1;index<right;index++){
-            int leftCost=findMinimumCost(nums,n,left,index,dp);
-            int rightCost=findMinimumCost(nums,n,index,right,dp);
+            int leftCost=findMinimumCost(nums,left,index,dp);
+            int rightCost=findMinimumCost(nums,index,right,dp);
             
             int totalCost=leftCost+rightCost+nums[left]*nums[index]*nums[right];
             minCost=min(minCost,totalCost);
@@ -37,7 +37,7 @@ public:
     {
         // code here
         vector<vector<int>>dp(n,vector<int>(n,-1));
-        int minCost=findMinimumCost(nums,n,0,n-1,dp);
+        int minCost=findMinimumCost(nums,0,n-1,dp);
         return minCost;
         
     }
