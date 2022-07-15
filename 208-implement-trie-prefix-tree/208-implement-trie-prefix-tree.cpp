@@ -1,10 +1,9 @@
 class Node{
-  public:
-    
-      
     vector<Node*>child;
     bool isEnd;
     
+  public:
+
     Node(){
         for(int index=0;index<26;index++)
             child.push_back(NULL);
