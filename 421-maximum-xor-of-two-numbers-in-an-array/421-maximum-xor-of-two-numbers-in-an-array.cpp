@@ -32,7 +32,7 @@ class Trie{
     void insert(int num){
         Node*node=root;
         
-        for(int index=31;index>=0;index--){
+        for(int index=30;index>=0;index--){
             int bit=(num>>index) & 1;
             if(!node->containsKey(bit)){
                 node->put(bit);
@@ -46,7 +46,7 @@ class Trie{
         Node*node=root;
         
         int maxNum=0;
-        for(int index=31;index>=0;index--){
+        for(int index=30;index>=0;index--){
             int bit=(num>>index) & 1;
             if(node->containsKey(!bit)){
                 maxNum= maxNum |(1<<index);
