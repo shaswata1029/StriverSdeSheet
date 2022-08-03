@@ -21,17 +21,7 @@ public:
             
             int idx1=mid;
             int idx2=(total+1)/2-idx1;
-            
-            // cout<<idx1<<" "<<idx2<<"\n";
-//             if(idx2<0){
-//                 high=mid-1;
-//                 continue;
-//             }
-            
-//             if(idx2>m){
-//                 low=mid+1;
-//                 continue;
-//             }
+
             
             int val1=(idx1==n?INT_MAX:nums1[idx1]);
             int pval1=(idx1==0?INT_MIN:nums1[idx1-1]);
