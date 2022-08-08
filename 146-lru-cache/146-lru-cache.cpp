@@ -2,7 +2,7 @@ class LRUCache {
 public:
     
     list<pair<int,int>>cache;
-    map<int,list<pair<int,int>>::iterator>myMap;
+    unordered_map<int,list<pair<int,int>>::iterator>myMap;
     int capacity;
     
     LRUCache(int capacity) {
